@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="homestyle.css">
+    <script src="https://kit.fontawesome.com/d535fdea96.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header class="thehead">
+        <div class="thehead-wrap">
+        <div class="logo">
+            <a href="/"><i class="fa-solid fa-earth-americas"></i></a>
+        </div>
+        <div class="navbar">
+            <ul class="listofbutton">
+                <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li id="tool"></i><a href=""><i class="fa-solid fa-screwdriver-wrench"></i> Tools</a>
+                    <div class="submenu">
+                        <ul>
+                            <li><a href="page3A.html">Compare region</a></li>
+                            <li><a href="p.html">Find similar region</a></li>
+                            <li><a href="page3B.html">Region match data</a></li>
+                        </div>
+                
+                </li>
+                
+                <li><a href="world.html">World View</a></li>
+                <li><a href="country.html">Country View</a></li>
+                <li><a href="mission.html">About us</a></li>
+            </ul>
+        </div>
+    </div>
+    </header>
+    
+    <section class="first">
+        
+        
+        <main class="hero">
+            <div class="content">
+                <h1>World Temperature &<br>Population Database</h1>
+                <p>Temperature data available from <span class="year"><span th:text="${minyear}"></span> - <span th:text="${maxyear}"></span></span><br>
+                    Population data available from <span class="year"><span th:text="${minyearpop}"></span> - <span th:text="${maxyearpop}"></span></span></p>
+                    <div class="thebuttons">
+                        <a href='world.html'><button>World View</button></a>
+                        <a href="country.html"><button>Country View</button></a>
+                        <a href="citystate.html"><button>State/City View</button></a>
+                    </div>
+            </div>
+        </main>
+    </section>
+    <hr>
+    <section class="second">
+        <div class="wrapper">
+            <div class="container">
+                <div class="box box__1">
+                    <h1>Population Data</h1>
+                    <p class="dedsquid"><span id="yearcolor">53 years</span> of population data available from <span id="yearcolor" th:text="${minyearpop}"></span> - <span id="yearcolor" th:text="${maxyearpop}"></span></p>
+                    <p class="dedsquid">Population  data available at worldwide & country level.</p><br>
+                    <div class="graph">
+                        <canvas id="myChart" height="400" width="500"></canvas>
+                    </div>
+                    
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    
+                    <script>
+                        const ctx = document.getElementById('myChart');
+                    
+                        new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['1960', '1970', '1980', '1990', '2000', '2010', '2013'],
+                            datasets: [{
+                            label: 'Population',
+                            data: [3031564839, 3690306927, 4442440474, 5293517142, 6144322697, 6969631901, 7229184551],
+                            borderWidth: 2,
+                            backgroundColor: '#4effd3',
+                            borderColor: '#4effd3',
+                            }]
+                        },
+                        options: {
+                            scales: {
+                            y: {
+                                beginAtZero: true
+                            },
+                            
+                            },
+                        
+                        
+                            maintainAspectRatio: false,
+                        }
+                        });
+                    </script>
+                </div>
+                <div class="box box__2">
+                    <div class="from">
+                        <h5>From</h5>
+                        <h1 th:text="${minpop}"></h1>
+                    </div>
+                    <div class="info">
+                        <h5>People<br>Start year: <span class="yearcolor" th:text="${minyearpop}"></span></h5>
+                    </div>
+                    <div class="from">
+                        <h5>to</h5>
+                        <h1 th:text="${maxpop}"></h1>
+                    </div>
+                    <div class="info">
+                        <h5>People<br>End year: <span class="yearcolor" th:text="${maxyearpop}"></span></h5>
+                    </div>
+                </div>
+                <div class="box box__3">
+                    <h5>Look up for worldwide population data</h5>
+                    <a href="world.html"><button>World View</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="second">
+        <div class="wrapper">
+            <div class="container">
+                <div class="box box__1" id="squid1">
+                    <h1>Temperature Data</h1>
+                    <p class="dedsquid"><span id="squidcolor">265 years</span> of temperature data available from <span class="yearcolor" id="squidcolor" th:text="${minyear}"></span> - <span class="yearcolor" id="squidcolor" th:text="${maxyear}"></span></p>
+                    <p class="dedsquid">Temperature  data available at worldwide, country, state and city.</p><br>
+                    <div class="graph">
+                        <canvas id="myChart2" height="400" width="500"></canvas>
+                    </div>
+                    
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    
+                    <script>
+                        const cts = document.getElementById('myChart2');
+                    
+                        new Chart(cts, {
+                        type: 'line',
+                        data: {
+                            labels: ['1750', '1800', '1850', '1900', '1950', '2000', '2013'],
+                            datasets: [{
+                            label: 'Temperature',
+                            data: [8.719, 8.484, 7.901, 8.502, 8.365, 9.201, 9.607],
+                            borderWidth: 2,
+                            backgroundColor: '#3FA1FC',
+                            borderColor: '#3FA1FC',
+                            }]
+                        },
+                        options: {
+                            scales: {
+                            y: {
+                                beginAtZero: true
+                            },
+                            },
+                            maintainAspectRatio: false,
+                        }
+                        });
+                    </script>
+                </div>
+                <div class="box box__2" id="squid2">
+                    <div class="from">
+                        <h5>From</h5>
+                        <h1 th:text="${mintemp}"></h1>
+                    </div>
+                    <div class="info">
+                        <h5>&#176;C<br>Start year: <span class="yearcolor" id="squidcolor" th:text="${minyear}"></span></h5>
+                    </div>
+                    <div class="from">
+                        <h5>to</h5>
+                        <h1 th:text="${maxtemp}"></h1>
+                    </div>
+                    <div class="info">
+                        <h5>&#176;C<br>End year: <span class="yearcolor" id="squidcolor" th:text="${maxyear}"></span></h5>
+                    </div>
+                </div>
+                <div class="box box__3" id="squid3">
+                    <h5>Look up for worldwide temperature data</h5>
+                    <a href="world.html"><button>World View</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <footer>
+        <div class="gbdb">
+            <h3>Global Database</h3>
+            <ul>
+                <li><a href="world.html">Find world data</a></li>
+                <li><a href="country.html">Find country data</a></li>
+                <li><a href="citystate.html">Find state/city data</a></li>
+            </ul>
+        </div>
+        <div class="at">
+            <h3>Analytic tools</h3>
+            <ul>
+                <li><a href="page3A.html">Compare region</a></li>
+                <li><a href="p.html">Find similar region</a></li>
+                <li><a href="page3B.html">Region match data</a></li>
+            </ul>
+        </div>
+        <div class="ab">
+            <a href="mission.html"><h3>About us</h3></a>
+        </div>
+        <div class="at">
+            <h3>Contact us</h3>
+            <ul>
+                <li><a href=""><i class="fa-brands fa-facebook"></i></a> <a href=""><i class="fa-brands fa-instagram"></i></a> <a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li>+84 123 456 77</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script> 
+
+    <script>
+    const lenis = new Lenis();
+    
+    lenis.on("scroll", (e) => {
+      console.log(e);
+    });
+    
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    
+    requestAnimationFrame(raf);
+    </script>
+</body>
+
+
+</html>

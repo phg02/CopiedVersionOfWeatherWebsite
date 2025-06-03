@@ -1,0 +1,322 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Neue-Montreal-Reg', 'sans-serif';
+}
+
+@font-face {
+    font-family: Neue-Montreal-Reg;
+    src: url(NeueMontreal-Regular.otf);
+}
+
+@font-face {
+    font-family: Neue-Montreal-Med;
+    src: url(NeueMontreal-Medium.otf);
+}
+
+@font-face {
+    font-family: Neue-Montreal-Bold;
+    src: url(NeueMontreal-Bold.otf);
+}
+*::-webkit-scrollbar-track {
+    background-color: #d9d9d920;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+    background-color: #d9d9d920;
+    border-radius: 30px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ffffffaf;
+    border-radius: 20px;
+}
+.first {
+    width: 100%;
+    height: 100vh;
+    background-image: url(background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header {
+    width: 100vw;
+    height: auto;
+}
+
+.thehead {
+    position: absolute;
+    width: 100%;
+}
+
+.thehead-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+
+.thehead .logo {
+    font-size: 3rem;
+    margin: 1rem 2rem
+}
+
+.thehead .logo a {
+    color: #9A9A9A;
+}
+
+.thehead .navbar {
+    margin: 0 2rem;
+}
+
+.thehead .navbar .listofbutton {
+    list-style: none;
+}
+
+.thehead .navbar .listofbutton li {
+    display: inline-block;
+    width: max-content;
+    padding: 20px;
+    position: relative;
+}
+
+.thehead .navbar .listofbutton a {
+    text-decoration: none;
+    color: #9A9A9A;
+    font-size: 1.2rem;
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+}
+
+.thehead .navbar .listofbutton a:hover {
+    color: white;
+    border-bottom: 3px solid white;
+    transition: ease-in-out 0.2s;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    z-index: 999;
+
+}
+
+.submenu ul li {
+    list-style: none;
+    display: block;
+    height: 15px;
+    background-color: rgba(0, 0, 0, 0.600);
+}
+
+#tool:hover .submenu {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    width: 150px;
+    height: 200px;
+    transition: ease-in 0.8s;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+main .content {
+    color: white;
+    font-size: 2rem;
+    top: 50%;
+    text-align: center;
+
+}
+
+main .content h1 {
+    font-family: 'Neue-Montreal-Bold', 'sans-serif';
+    font-size: 3.5rem;
+}
+
+main .content p {
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+    color: #9A9A9A;
+}
+
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    transition: ease-in 0.1s;
+}
+
+.year {
+    color: #8afed8;
+}
+
+.content h1 {
+    padding: 15px;
+}
+
+.second {
+    width: 100%;
+    height: 100vh;
+    background-color: #101010;
+
+}
+
+.wrapper {
+    display: flex;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.second .container {
+    display: grid;
+    margin-left: 8%;
+    margin-right: 8%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.box {
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #89fdffad;
+    background: rgb(44,107,136);
+    background: linear-gradient(110deg, rgba(90, 90, 90, 0.155) 0%, rgba(0,0,0,0.364670868347339) 39%, rgba(0,0,0,0.46271008403361347) 56%, rgba(113, 255, 234, 0.196) 100%);
+    color: white;
+}
+.box__2 {
+    background: linear-gradient(70deg, rgba(113, 255, 234, 0.196) 0%, rgba(0,0,0,0.364670868347339) 39%, rgba(0,0,0,0.46271008403361347) 56%, rgba(90, 90, 90, 0.155) 100%);
+}
+.box__3 {
+    background: linear-gradient(90deg, rgba(113, 255, 234, 0.196) 0%, rgba(0,0,0,0.364670868347339) 39%, rgba(0,0,0,0.46271008403361347) 56%, rgba(90, 90, 90, 0.155) 100%);
+}
+#squid1{
+    border: 1px solid #63B4FF;
+    background: rgb(44,107,136);
+    background: linear-gradient(110deg, rgba(90, 90, 90, 0.155) 0%, rgba(0,0,0,0.364670868347339) 39%, rgba(0,0,0,0.46271008403361347) 56%, rgba(84, 130, 255, 0.16) 100%);
+}
+#squid2{
+    border: 1px solid #63B4FF;
+    background: rgb(44,107,136);
+    background: linear-gradient(70deg, rgba(84, 130, 255, 0.16) 0%, rgba(0,0,0,0.364670868347339) 39%, rgba(0,0,0,0.46271008403361347) 56%, rgba(90, 90, 90, 0.155) 100%);}
+#squid3{
+    border: 1px solid #63B4FF;
+    background: rgb(44,107,136);
+    background: linear-gradient(90deg, rgba(84, 130, 255, 0.16) 0%, rgba(0,0,0,0.364670868347339) 39%, rgba(0,0,0,0.46271008403361347) 56%, rgba(90, 90, 90, 0.155) 100%);
+}
+.box__1 {
+    grid-column: 1/2;
+    grid-row: 1/4;
+}
+
+.box__2 {
+    grid-column: 2;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.box__3 {
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+.box__2 .from {
+    font-size: 3rem;
+}
+
+.box__2 .info {
+    font-size: 1.8rem;
+    padding: 30px;
+    align-self: end;
+
+}
+
+.box__1 h1 {
+    font-size: 2rem;
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+    line-height: 1.4;
+}
+
+.box__3 h5 {
+    font-size: 1.5rem;
+}
+
+.from h5 {
+    color: #9D9D9D;
+}
+
+.info {
+    color: #9D9D9D;
+}
+.dedsquid{
+    color: #9D9D9D;
+}
+
+.info .yearcolor {
+    color: #4effd3;
+}
+#yearcolor{
+    color: #4effd3;
+}
+#squidcolor{
+    color: #72BBFF;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    padding-bottom: 40px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #101010;
+}
+
+footer li {
+    list-style: none;
+    padding: 2px;
+    line-height: 1.4;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer i {
+    font-size: 2rem;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    font-family: 'Neue-Montreal-Med', 'sans-serif';
+}
+footer li a:hover{
+    color: #8afed8;
+}
